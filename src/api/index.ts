@@ -1,8 +1,7 @@
-import { createApp } from '../server/app.ts';
-import { bootstrapAdmin } from '../server/bootstrap.ts';
-import { assertProductionConfig } from '../server/env.ts';
-import { sessionSecret } from '../server/secret.ts';
-import { getStorage } from '../server/storage/index.ts';
+import { createApp } from '../../server/app.ts';
+import { bootstrapAdmin } from '../../server/bootstrap.ts';
+import { assertProductionConfig } from '../../server/env.ts';
+import { getStorage } from '../../server/storage/index.ts';
 
 let ready: Promise<void> | null = null;
 
@@ -10,7 +9,6 @@ async function initialize() {
   assertProductionConfig();
   await getStorage().init();
   await bootstrapAdmin();
-  await sessionSecret();
 }
 
 function ensureReady() {
