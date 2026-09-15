@@ -2,13 +2,14 @@
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "functions": {
+    "api/admin-content.ts": { "includeFiles": "**/*.ts" },
     "api/admin.ts": { "includeFiles": "**/*.ts" },
     "api/admin-login.ts": { "includeFiles": "**/*.ts" },
     "api/index.ts": { "includeFiles": "**/*.ts" },
     "api/[...path].ts": { "includeFiles": "**/*.ts" }
   },
   "rewrites": [
-    { "source": "/api/admin/content", "destination": "/api/admin" },
+    { "source": "/api/admin/content", "destination": "/api/admin-content" },
     { "source": "/api/admin/login", "destination": "/api/admin-login" },
     { "source": "/admin/login", "destination": "/api/admin-login" },
     { "source": "/admin", "destination": "/api/admin" },
